@@ -5,12 +5,26 @@
   <body>
     <h1>Gossip Page !</h1>
     <p>
-    This is Gossip page n° : <%= params['id'] %>
+    This is Gossip page n° : <%= params['id'].to_i + 1 %>
     <br/>
     Author name : <%= gossip.author %>
     <br/>
-    This content : <% gossip.content %>
+    This content : <%= gossip.content %>
     <br/>
+    </p>
+    <h2> Comment on this gossip </h2>
+    <% comments.each_with_index do |comment,index| %>
+        <p>Comment n°<%= index +1 %> :<br/><%= comment.comment %><br/>
+        </p>
+    <% end %>
+    <br/>
+    <h3> Comment this gossip</h3>
+      <form action='/gossips/<%= params['id'] %>/' method='POST'>
+        Puts you comment here : <input type='text' name='gossip_comment'/>
+        <br/>
+        <input type='submit'/>
+      </form>
+    <a href="/gossips/<%= params['id'] %>/edit/">Edit here</a>
     <a href="/">Go home</a>
   </body>
 </html>
