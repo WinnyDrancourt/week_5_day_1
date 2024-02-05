@@ -5,12 +5,13 @@
   <body>
     <h1>Gossip Edit Page !</h1>
     <p>
-    You want modify gossip n° : <%= params['id'] %>
+    You want modify gossip n° : <%= params['id'].to_i +1 %>
     <br/>
     <form action='/gossips/<%= params['id'] %>/edit/' method='POST'>
       Change author here :  <input type='text' name='gossip_author' value="<%=gossip.author%>"/>
       <br/>
-      Change content here : <input type='text' name='gossip_content' value="<%=gossip.content%>"/>
+      Change content here : <input type='text' name='gossip_content' value="<%=go
+      ssip.content%>"/>
       <br/>
       <input type='submit'/>
     </form>

@@ -1,13 +1,33 @@
-Week 5 Day 1
+# Week 5 Day 1 : Sinatra
 
-- play around Sinatra.
+A brief description of what this project does and who it's for play around sinatra and make our first website (gossip by THP) with ruby.
 
-- Some try with comment but without succes at this moment.
+## Features
 
-- To run this you need
+- Add some Gossip
+- One page by gossip
+- Edit Gossip
+- Add a comment
+- Read comment by gossip
 
-`bundle install`
+## Run Locally
 
-and after this
+Clone the project
 
-`rackup -p 4567`
+```bash
+  git clone https://github.com/WinnyDrancourt/week_5_day_1.git
+```
+
+Go to the project directory
+
+Install dependencies
+
+```bash
+  bundle Install
+```
+
+Start the server
+
+```bash
+  rerun "rackup -p 4567"
+```

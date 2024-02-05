@@ -2,8 +2,8 @@ class Comment
   attr_accessor :comment, :id
 
   def initialize(id, comment)
-    @comment = comment
     @id = id
+    @comment = comment
   end
 
 

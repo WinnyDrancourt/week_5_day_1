@@ -2,7 +2,7 @@
 class Gossip
   attr_accessor :author, :content
 
-  def initialize(author, content, comment)
+  def initialize(author, content)
     @author = author
     @content = content
   end
@@ -10,14 +10,14 @@ class Gossip
 
   def save
     CSV.open("db/gossip.csv", "a") do |csv|
-      csv << [@author, @content, @comment]
+      csv << [@author, @content]
     end
   end
 
   def self.all
     all_gossip = []
     CSV.foreach("db/gossip.csv") do |row|
-      all_gossip << Gossip.new(row[0], row[1], row[2])
+      all_gossip << Gossip.new(row[0], row[1])
     end
     return all_gossip
   end
