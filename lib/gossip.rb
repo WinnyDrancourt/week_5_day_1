@@ -26,16 +26,16 @@ class Gossip
     return Gossip.all[id.to_i]
   end
 
-  def self.update(id, author, content)
-    gossips = []
+  def self.update(id, author, content) # method for edit post.
+    gossips = [] # To create the nnew arrays modify with edit
     CSV.read("db/gossip.csv").each_with_index do |row, index|
-      if id.to_i == (index)
+      if id.to_i == (index) # check if id of edit == at id of row and puts change into array
           gossips << [author, content]
         else
           gossips << [row[0], row[1]]
       end
     end
-    CSV.open("db/gossip.csv", "w") do |csv|
+    CSV.open("db/gossip.csv", "w") do |csv| # just inject the new array into db and rewrite it
       gossips.each do |row|
         csv << row
       end

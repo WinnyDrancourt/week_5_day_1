@@ -1,7 +1,7 @@
 class Comment
   attr_accessor :comment, :id
 
-  def initialize(id, comment)
+  def initialize(id, comment) #we take id and comment( possibility to add author) to combine the 2db
     @id = id
     @comment = comment
   end
@@ -21,7 +21,7 @@ class Comment
     return all_gossip_comment
   end
 
-  def self.all_with_id (id)
+  def self.all_with_id (id) # method to extract only comment with same id of gossip
 		return self.all.select {|comment| comment.id.to_i == id}
 	end
 
