@@ -12,13 +12,14 @@
     This content : <%= gossip.content %>
     <br/>
     </p>
-    <h2> Comment on this gossip </h2> #extract comment with same id of gossip
+    <%# extract comment with same id of gossip #%>
+    <h2> Comment on this gossip </h2>
     <% comments.each_with_index do |comment,index| %>
         <p>Comment n°<%= index +1 %> :<br/><%= comment.comment %><br/>
         </p>
     <% end %>
-    <br/>
-    <h3> Comment this gossip</h3> #form for comment
+    <br/> <%#form for comment#%>
+    <h3> Comment this gossip</h3>
       <form action='/gossips/<%= params['id'] %>/' method='POST'>
         Puts you comment here : <input type='text' name='gossip_comment'/>
         <br/>
